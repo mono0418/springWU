@@ -1,0 +1,41 @@
+body {
+    background-color: #0dd0fc;
+    margin: 0;
+}
+
+/* #490dfc */
+
+#containterLeaderboard {
+    display: grid;
+    height: 100vh;
+    grid-template-columns: repeat(5, 20%);
+    grid-template-rows: 150px, 350px, 1fr;
+    grid-template-areas: 
+    "hd hd hd hd hd"
+    "se se se se se"
+    "mn mn mn mn mn";
+}
+
+header{
+    display: grid;
+    grid-area: hd;
+    height: 150px;
+}
+
+section{
+    display: grid;
+    grid-area: se;
+    height: 350px;
+}
+
+main{
+    display: grid;
+    grid-area: mn;
+    height: auto;
+    align-items: center;
+}
+
+#xpInfo{
+    display: flex;
+    width: 100%;
+}

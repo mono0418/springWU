@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LEVEL UP! - Leaderboard</title>
+  </head>
+  <body>
+    <div id="containterLeaderboard">
+      <header>LEVEL UP!</header>
+      <section>
+        <table>
+          <thead>
+            <tr>
+              <th>Number 1</th>
+              <th>Number 2</th>
+              <th>Number 3</th>
+            </tr>
+          </thead>
+        </table>
+      </section>
+      <main>
+        <table id="xpInfo">
+          <thead>
+            <tr>
+              <th>Alias</th>
+              <th>Level</th>
+              <th>Total XP</th>
+            </tr>
+          </thead>
+          <tbody class="tbody"></tbody>
+        </table>
+      </main>
+
+      <script>
+        const tbody_ = document.querySelector(".tbody");
+
+        const url_ =
+          "https://docs.google.com/spreadsheets/d/1SyFA2P5r4ETjk-Pi6bslTfMYuJn9XiL9524yEyqISfU/gviz/tq?sheet=Messages_";
+
+        fetch(url_)
+          .then((response) => response.text())
+          .then((data) => {
+            const jsonPart = data.split("setResponse(")[1];
+            const jsonText = jsonPart.slice(0, jsonPart.length - 2);
+            const toJson = JSON.parse(jsonText);
+            const rows_ = toJson.table.rows;
+
+            rows_.forEach((item, index) => {
+              const tr_ = document.createElement("tr");
+
+              tr_.innerHTML = `
+            ${item.c.map((cell) => `<td>${cell ? cell["v"] : ""}</td>`).join("")}            `;
+
+              tbody_.appendChild(tr_);
+            });
+          })
+          .catch((error) => console.log(error));
+      </script>
+    </div>
+  </body>
+</html>
