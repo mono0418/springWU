@@ -1,8 +1,9 @@
 :root {
     --bg: #050a14;
     --cyan: #0dd0fc;
-    --panel: #0b1628;
+    --panel: #101d33;
     --text: #cde6ff;
+    --bread: #609edb;
 }
 
 body {
@@ -72,13 +73,16 @@ header {
         0 0 60px var(--cyan),
         0 0 100px var(--cyan);
     animation: pulse-glow 4s ease-in-out infinite;
-    position: relative;
     z-index: 0;
     padding: 40px 24px;
     animation: fadeDown 0.6s ease both, pulse-glow 4s ease-in-out infinite;
 }
 
-header::before {
+.crt{
+    position: relative;
+}
+
+.crt::before {
     content: '';
     position: absolute;
     inset: 0;
@@ -150,7 +154,7 @@ nav a {
     font-weight: 700;
     letter-spacing: 3px;
     text-transform: uppercase;
-    color: #4a6a8a;
+    color: var(--bread);
     text-decoration: none;
     transition: color 0.2s;
 }
@@ -200,7 +204,7 @@ th {
     font-size: 11px;
     font-weight: 700;
     letter-spacing: 3px;
-    color: #4a6a8a;
+    color: var(--bread);
     text-transform: uppercase;
     text-align: left;
 }
@@ -222,7 +226,7 @@ tbody tr:hover {
     font-size: 12px;
     font-weight: 700;
     letter-spacing: 4px;
-    color: #4a6a8a;
+    color: var(--bread);
     text-transform: uppercase;
 }
 
@@ -326,3 +330,271 @@ section {
     grid-area: se;
     padding-bottom: 40px;
 }
+
+/* --------------------------------------- */
+
+#home {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 120px 24px 80px;
+}
+
+.hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.hero-logo img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    border: 2px solid var(--cyan);
+    box-shadow: 0 0 20px var(--cyan);
+}
+
+.hero h1 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 72px;
+    color: var(--cyan);
+    animation: pulse-glow 4s ease-in-out infinite;
+}
+
+.hero-desc {
+    font-size: 18px;
+    color: var(--bread);
+    max-width: 500px;
+    line-height: 1.6;
+}
+
+.xp-cards {
+    display: flex;
+    gap: 16px;
+    margin-top: 24px;
+}
+
+.xp-card {
+    flex: 1;
+    background: var(--panel);
+    border: 1px solid #1a2f50;
+    border-radius: 4px;
+    padding: 24px;
+    text-align: center;
+}
+
+.xp-card-icon {
+    font-size: 32px;
+    margin-bottom: 12px;
+}
+
+.xp-card-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 24px;
+    color: var(--cyan);
+    margin-bottom: 8px;
+}
+
+.xp-card-desc {
+    font-size: 14px;
+    color: var(--bread);
+    line-height: 1.6;
+}
+
+/* -------------------------------------- */
+
+#contacts {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 120px 24px 80px;
+}
+
+.contacts-hero {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.contacts-hero h1 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 72px;
+    color: var(--cyan);
+    animation: pulse-glow 4s ease-in-out infinite;
+}
+
+.about-box {
+    background: var(--panel);
+    border: 1px solid #1a2f50;
+    border-radius: 4px;
+    padding: 24px;
+    margin: 16px 0 40px;
+    color: var(--bread);
+    line-height: 1.8;
+    font-size: 16px;
+}
+
+.contact-cards {
+    display: flex;
+    gap: 16px;
+    margin-top: 24px;
+    flex-wrap: wrap;
+}
+
+.contact-card {
+    flex: 1;
+    min-width: 180px;
+    background: var(--panel);
+    border: 1px solid #1a2f50;
+    border-radius: 4px;
+    padding: 24px;
+    text-align: center;
+    text-decoration: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.contact-card:hover {
+    border-color: var(--cyan);
+    box-shadow: 0 0 12px rgba(13, 208, 252, 0.2);
+}
+
+.contact-icon {
+    font-size: 32px;
+    margin-bottom: 12px;
+}
+
+.contact-label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    color: var(--bread);
+    text-transform: uppercase;
+    margin-bottom: 6px;
+}
+
+.contact-value {
+    font-size: 14px;
+    color: var(--cyan);
+}
+
+/* ------------------------------------- */
+
+#milestones {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 120px 24px 80px;
+}
+
+.milestones-hero {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.milestones-hero h1 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 72px;
+    color: var(--cyan);
+    animation: pulse-glow 4s ease-in-out infinite;
+}
+
+.milestone-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 24px;
+}
+
+.milestone-card {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    background: var(--panel);
+    border: 1px solid #1a2f50;
+    border-radius: 4px;
+    padding: 16px 24px;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.milestone-card:hover {
+    border-color: var(--cyan);
+    box-shadow: 0 0 12px rgba(13, 208, 252, 0.15);
+}
+
+.milestone-color {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+.milestone-name {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 24px;
+    color: #fff;
+}
+
+.milestone-levels {
+    font-size: 13px;
+    color: var(--bread);
+    letter-spacing: 2px;
+}
+
+.milestone-reward {
+    font-size: 13px;
+    color: var(--cyan);
+    margin-top: 4px;
+    letter-spacing: 1px;
+}
+
+/* Färger */
+.yellow {
+    background: #ffd700;
+}
+
+.green {
+    background: #00c853;
+}
+
+.blue {
+    background: #2979ff;
+}
+
+.purple {
+    background: #aa00ff;
+}
+
+.red {
+    background: #d50000;
+}
+
+.bronze {
+    background: linear-gradient(135deg, #cd7f32, #3a1606);
+}
+
+.silver {
+    background: linear-gradient(135deg, #c0c0c0, #0c0c0c);
+}
+
+.gold {
+    background: linear-gradient(135deg, #ffcd45, #1d1a00);
+}
+
+.diamond {
+    background: linear-gradient(135deg, #76d3dd, #afdbff, #4754cc);
+}
+
+.platinum {
+    background: linear-gradient(135deg, #67f9ed, #affff8, #22eecc);
+    
+}
+
+.mythical {
+    background: linear-gradient(135deg, #ff399f, #c300ff, #2f00ff);
+}
+
+.mythical-card {
+    position: relative;
+    overflow: hidden;
+    border-color: #818cf8;
+    box-shadow: 0 0 100px rgba(129, 140, 248, 0.3);
+}
+
